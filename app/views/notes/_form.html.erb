@@ -1,5 +1,19 @@
-<%= simple_form_for @note do |f| %>
-	<%= f.input :title %>
-	<%= f.input :content %>
-	<%= f.button :submit %>
+<%= simple_form_for @note,
+ wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  } do |f| %>
+  <div class="form-group">
+  	<div class="mb-3">
+  	<%= f.label :title, {class:"form-label"} %>
+	<%= f.text_field :title, {class:"form-control"} %>
+</div>
+<div class="mb-3">
+	<%= f.label :content, {class:"form-label"} %>
+	<%= f.input :content, label: false, class:"form-control" %>
+</div>
+	<%= f.button :submit, class: "btn btn-primary" %>
+	</div>
 <% end %>
