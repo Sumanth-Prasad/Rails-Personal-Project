@@ -1,3 +1,4 @@
+<div class="position-absolute top-50 start-50 translate-middle p-3">
 <legend><%= t('.title', resource: resource_name.to_s.humanize) %></legend>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -43,4 +44,5 @@
 </div>
 <div class="mb-3">
 <%= link_to t('.back'), :back %>
+</div>
 </div>

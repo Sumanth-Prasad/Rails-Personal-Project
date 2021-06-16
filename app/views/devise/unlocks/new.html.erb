@@ -1,3 +1,4 @@
+<div class="position-absolute top-50 start-50 translate-middle p-3">
 <legend><%= t('.resend_unlock_instructions') %></legend>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
@@ -17,3 +18,4 @@
 </div>
 <% end %>
 <%= render 'devise/shared/links' %>
+</div>
