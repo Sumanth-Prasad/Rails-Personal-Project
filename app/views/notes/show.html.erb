@@ -1,5 +1,6 @@
 <div class="text-center">
 <h1><%= @note.title %></h1>
+<h3><%= @note.category.name %></h3>
 <p><%= simple_format(@note.content) %></p>
 
 <%= link_to "Edit", edit_note_path(@note), :class => "btn btn-primary" %>

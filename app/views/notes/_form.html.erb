@@ -4,6 +4,9 @@
 	<%= f.text_field :title, {class:"form-control"} %>
 	</div>
 	<div class="mb-3">
+	<%= f.select :category_id, Category.all.map {|c| [c.name, c.id]}, class: "form-control selectpicker" %>
+	</div>
+	<div class="mb-3">
 	<%= f.label :content, {class:"form-label"} %>
 	<%= f.input :content, {class:"form-control", label: false} %>
 	</div>

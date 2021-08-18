@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category Name:</strong>
+  <%= @category.name %>
+</p>
+
+
+  <div class="row">
+    <% @notes.each do |note| %>
+    <div class="col-4">
+      <div class="card bg-dark">
+        <a class="text-decoration-none text-white" href="<%= (url_for [note]) %>">
+          <div class="card-header">
+            <%= note.title %>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <%= time_ago_in_words(note.created_at) %>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
+

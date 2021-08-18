@@ -7,6 +7,7 @@ class NotesController < ApplicationController
 	end
 
 	def show
+		@note = Note.find(params[:id])
 	end
 
 	def new
@@ -24,6 +25,7 @@ class NotesController < ApplicationController
 	end
 
 	def edit
+		@note = Note.find(params[:id])
 	end
 
 	def update
@@ -35,6 +37,7 @@ class NotesController < ApplicationController
 	end
 
 	def destroy
+		@note = Note.find(params[:id])
 		@note.destroy
 		redirect_to notes_path
 	end
@@ -46,6 +49,6 @@ class NotesController < ApplicationController
 	end
 
 	def note_params
-		params.require(:note).permit(:title, :content)
+		params.require(:note).permit(:title, :category_id, :content)
 	end
 end
